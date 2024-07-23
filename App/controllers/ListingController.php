@@ -247,14 +247,14 @@ class ListingController
     public function search()
     {
         $keywords = isset($_GET['keywords']) ? trim($_GET['keywords']) : '';
-        $location = isset($_GET['location']) ? trim($_GET['location']) : '';
+        $postcode = isset($_GET['postcode']) ? trim($_GET['postcode']) : '';
 
         $query = "SELECT * FROM listings WHERE (title LIKE :keywords OR description LIKE :keywords OR tags LIKE :keywords OR company LIKE :keywords)
         AND (postcode LIKE :location) ";
 
         $params = [
             'keywords' => "%{$keywords}%",
-            'location' => "%{$location}%"
+            'postcode' => "%{$postcode}%"
         ];
 
         $listings = $this->db->query($query, $params)->fetchAll();
@@ -262,7 +262,7 @@ class ListingController
         loadView('/listings/index', [
             'listings' => $listings,
             'keywords' => $keywords,
-            'location' => $location,
+            'postcode' => $postcode,
         ]);
     }
 }
