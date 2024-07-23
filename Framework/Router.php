@@ -5,10 +5,12 @@ namespace Framework;
 use App\Controllers\ErrorController;
 use Framework\middleware\Auth;
 
-class Router{
+class Router
+{
     protected $routes = [];
 
-    public function registerRoute($method, $uri, $action, $middleware = []){
+    public function registerRoute($method, $uri, $action, $middleware = [])
+    {
         list($controller, $controllerMethod) = explode('@', $action);
 
         $this->routes[] = [
@@ -88,7 +90,7 @@ class Router{
 
                 if ($match) {
                     foreach ($route['middleware'] as $middleware) {
-                        (new Authorise())->handle($middleware);
+                        (new Auth())->handle($middleware);
                     }
 
                     $controller = 'App\\Controllers\\' . $route['controller'];
@@ -104,5 +106,4 @@ class Router{
 
         ErrorController::notFound();
     }
-
 }

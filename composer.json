@@ -1,0 +1,16 @@
+{
+    "name": "omac-gblz/bobslist",
+    "description": "Marketplace App",
+    "authors": [
+        {
+            "name": "OMAC-GBLZ",
+            "email": "noemail@email.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "Framework/",
+            "App\\": "App/"
+        }
+    }
+}
