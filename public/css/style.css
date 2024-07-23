@@ -1,0 +1,102 @@
+/* general styling */
+
+a{
+    text-decoration: none;
+}
+
+h2{
+    color: #03346E;
+}
+
+h1{
+    color: #03346E;
+    font-size: 48pt;
+}
+
+.self-center{
+    align-self: center;
+}
+.yellow{
+    color: gold;
+}
+
+/* header */
+
+header{
+    background-color: #03346E;
+    color: white;
+    border-radius: 20px;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10%;
+    gap: 10%;
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+header a{
+    color: white;
+}
+
+header h1{
+    font-size: 24pt;
+}
+
+.site-title{
+    width: 20%;
+    grid-area: 1 / 1 / 2 / 2;
+    margin-left: 10%;
+}
+
+button.yellow{
+    border: none;
+    background-color: transparent;
+}
+
+.yellow-btn{
+    background-color: gold;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+.yellow-btn > a{
+    color: black;
+
+}
+
+/* search */
+
+#search{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+/* home */
+
+.home-listings{
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+}
+
+.home-content{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#home h2{
+    font-size: 28pt;
+}

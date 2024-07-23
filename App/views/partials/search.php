@@ -1,6 +1,6 @@
-<section>
+<section id="search">
     <div>
-        <h2>Find a Listing</h2>
+        <h1>Find a Listing</h1>
         <form method="GET" action="/listings/search">
             <input type="text" name="keywords" placeholder="Keywords" />
             <input type="text" name="postcode" placeholder="Postcode" />

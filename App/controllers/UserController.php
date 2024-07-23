@@ -160,7 +160,7 @@ class UserController
             'email' => $email
         ];
 
-        $user = $this->db->query('SELCT * FROM users WHERE email = :email', $params)->fetch();
+        $user = $this->db->query('SELECT * FROM users WHERE email = :email', $params)->fetch();
 
         if (!$user) {
             $errors['email'] = 'Email not found';

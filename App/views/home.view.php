@@ -3,14 +3,14 @@ loadPartial('header');
 loadPartial('search');
 ?>
 
-<section>
-    <div>
-        <div>Recent Listings</div>
-        <div>
+<section id="home">
+    <div class="home-content">
+        <h2 class="self-center">Recent Listings</h2>
+        <div class="home-listings">
             <?php foreach ($listings as $listing) : ?>
-                <div>
+                <div class="card">
                     <div>
-                        <h2><?= $listing->title ?></h2>
+                        <h3><?= $listing->title ?></h3>
                         <p>
                             <?= $listing->description ?>
                         </p>
@@ -29,8 +29,12 @@ loadPartial('search');
                     </div>
                 </div>
             <?php endforeach; ?>
+        </div>
+        <div class="self-center">
+            <button href="/listings">All Listings</button>
+        </div>
 
-            <a href="/listings">All Listings</a>
+    </div>
 </section>
 
 <?php
