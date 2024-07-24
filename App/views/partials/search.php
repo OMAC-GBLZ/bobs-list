@@ -4,7 +4,7 @@
         <form method="GET" action="/listings/search">
             <input type="text" name="keywords" placeholder="Keywords" />
             <input type="text" name="postcode" placeholder="Postcode" />
-            <button>Search</button>
+            <button class="yellow-btn">Search</button>
         </form>
     </div>
 </section>

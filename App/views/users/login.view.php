@@ -3,7 +3,7 @@ loadPartial('header');
 ?>
 
 <div>
-    <div>
+    <div class="login container-vert">
         <h2>Login</h2>
         <?php if (isset($errors)) : ?>
             <?php foreach ($errors as $error) : ?>
@@ -11,10 +11,10 @@ loadPartial('header');
             <?php endforeach; ?>
         <?php endif; ?>
         <form method="POST" action="/auth/login">
-            <div>
+            <div class="container-vert">
                 <input type="email" name="email" placeholder="Email Address" />
                 <input type="password" name="password" placeholder="Password" />
-                <button type="submit">Login</button>
+                <button class="yellow-btn w-100" type="submit">Login</button>
             </div>
             <p>
                 Don't have an account?

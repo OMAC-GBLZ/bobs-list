@@ -20,6 +20,67 @@ h1{
     color: gold;
 }
 
+li{
+    list-style: none;
+}
+
+.yellow-btn{
+    background-color: gold;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 50px;
+    cursor: pointer;
+
+}
+
+.red-btn{
+    background-color: brown;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 50px;
+    cursor: pointer;
+}
+
+.green-btn{
+    background-color: green;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 50px;
+    cursor: pointer;
+
+}
+
+button{
+    background-color: transparent;
+    border: none;
+}
+
+div, a, p, h1, h2, h3, button, input, textarea{
+    font-family: "Poppins", sans-serif;
+}
+
+div, a, p, button, input, textarea{
+    font-family: "Poppins", sans-serif;
+    font-size: 12pt;
+}
+.container-vert{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+}
+
+.w-100{
+    width: 100%;
+}
+
 /* header */
 
 header{
@@ -38,9 +99,10 @@ header{
     justify-content: flex-end;
     align-items: center;
     margin-right: 10%;
-    gap: 10%;
+    gap: 50px;
     grid-area: 1 / 2 / 2 / 3;
 }
+
 
 header a{
     color: white;
@@ -56,18 +118,11 @@ header h1{
     margin-left: 10%;
 }
 
-button.yellow{
-    border: none;
-    background-color: transparent;
+.site-title a{
+font-size: 26pt;
 }
 
-.yellow-btn{
-    background-color: gold;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
 
-}
 
 .yellow-btn > a{
     color: black;
@@ -82,6 +137,10 @@ button.yellow{
     text-align: center;
 }
 
+#search input{
+    padding: 8px;
+}
+
 /* home */
 
 .home-listings{
@@ -91,7 +150,7 @@ button.yellow{
 }
 
 .home-content{
-    margin-top: 5%;
+    margin-top: 2%;
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -99,4 +158,126 @@ button.yellow{
 
 #home h2{
     font-size: 28pt;
+}
+
+#home{
+    background-color: white;
+    padding-bottom: 20px;
+}
+
+.card{
+    background-color: #03346E;
+    padding: 1%;
+    width: 10%;
+    border-radius: 20px;
+    color: white
+}
+
+/* forms */
+
+.form{
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   max-width: 500px;
+}
+
+textarea{
+    width: 500px;
+    resize: none;
+    height: 200px;
+}
+
+/* search results */
+
+.page-title{
+    display: flex;
+    justify-content: center;
+}
+
+.results{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    gap: 50px;
+    max-width: 100%;
+}
+
+#results h1{
+    font-size: 32pt;
+}
+
+.results .card{
+    width: 50%;
+}
+
+.results .card h2{
+    color: white;
+}
+
+#results img{
+    width: 50%;
+}
+
+/* single listing */
+
+#single{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.grid-left{
+    grid-area: 1 / 1 / 2 / 2;
+    margin-left: 100px;
+}
+
+.grid-mid-under{
+    grid-area: 2 / 2 / 3 / 3;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+}
+.grid-mid-upper{
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    justify-content: center;
+}
+
+/* register */
+
+#reg{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+/* login */
+
+.login.container-vert{
+    margin-top: 100px;
+}
+
+.form{
+    max-width: 500px;
+}
+
+/* images */
+
+.img-small{
+    max-width: 200px;
+    border-radius: 10px;
+}
+
+.img-med{
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.img-large{
+    max-width: 600px;
+    border-radius: 20px;
 }

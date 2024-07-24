@@ -5,26 +5,37 @@ loadPartial('header');
 
 
 
-<section>
+<section id="results">
     <div>
-        <div>
+        <div class="page-title">
             <?php if (isset($keywords)) : ?>
-                Search results for: <?= htmlspecialchars($keywords) ?><?= htmlspecialchars((' , ' . $postcode)) ?>
+                <h2>Search results for: <?= htmlspecialchars($keywords) ?><?= htmlspecialchars((' , ' . $postcode)) ?></h2>
             <?php else : ?>
-                All Listings
+                <h1>All Listings </h1>
             <?php endif; ?>
         </div>
         <?= loadPartial('message') ?>
-        <div>
+        <div class="results">
             <?php foreach ($listings as $listing) : ?>
-                <div>
+                <div class="card">
                     <div>
                         <h2><?= $listing->title ?></h2>
+                        <div class="img-med">
+                            <?php if ($listing->image_location) : ?>
+                                <a href="<?= $listing->image_location ?>">
+                                    <img class="img-med" src="<?= $listing->image_location ?>" alt="<?= $listing->title ?>">
+                                </a>
+                            <?php else : ?>
+                                <a href="/images/nophoto.jpg">
+                                    <img class="img-med" src="/images/nophoto.jpg" alt="no photo provided">
+                                </a>
+                            <?php endif; ?>
+                        </div>
                         <p>
                             <?= $listing->description ?>
                         </p>
                         <ul>
-                            <li><strong>Price:</strong> <?= $listing->price ?></li>
+                            <li><strong>Price:</strong> £<?= $listing->price ?></li>
                             <li>
                                 <strong>Location:</strong> <?= $listing->postcode ?>
                             </li>
@@ -35,7 +46,7 @@ loadPartial('header');
                             <?php endif; ?>
                         </ul>
                         <a href="/listings/<?= $listing->id ?>">
-                            Details
+                            <div class="yellow-btn">Details</div>
                         </a>
                     </div>
                 </div>

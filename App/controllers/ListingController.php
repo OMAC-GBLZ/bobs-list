@@ -10,6 +10,7 @@ use Framework\Authorisation;
 
 
 
+
 class ListingController
 {
     protected $db;
@@ -60,9 +61,34 @@ class ListingController
 
     public function store()
     {
+
+
+        if (strlen($_FILES['image']['name']) > 0) {
+            $image_name = uniqid() . '-' . $_FILES['image']['name'];
+            $temp_name = $_FILES['image']['tmp_name'];
+
+            $allowedExtensions = ['jpg', 'jpeg', 'png'];
+            $fileExtension = strtolower(pathinfo($image_name, PATHINFO_EXTENSION));
+            $path = basePath('public/images/') . $image_name;
+            $storedPath = '/images/' . $image_name;
+
+
+
+            if (in_array($fileExtension, $allowedExtensions)) {
+                $uploaded = move_uploaded_file($temp_name, $path);
+                if (!$uploaded) {
+                    Session::setFlashMessage('error_message', 'File failed to upload');
+                }
+            }
+        } else {
+            $storedPath = 'NULL';
+        }
+
         $allowedFields = ['title', 'description', 'price', 'tags', 'postcode', 'phone', 'email'];
 
         $newListingData = array_intersect_key($_POST, array_flip($allowedFields));
+
+        $newListingData['image_location'] = $storedPath;
 
         $newListingData['user_id'] = Session::get('user')['id'];
 

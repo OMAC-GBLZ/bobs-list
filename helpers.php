@@ -35,7 +35,7 @@ function loadPartial($name, $data = [])
     }
 }
 
- // Inspect value(s)
+// Inspect value(s)
 
 
 function inspect($value)
@@ -46,8 +46,8 @@ function inspect($value)
 }
 
 
- //Inspect value(s) and die
- 
+//Inspect value(s) and die
+
 
 function inspectAndDie($value)
 {
@@ -57,8 +57,8 @@ function inspectAndDie($value)
 }
 
 
- //Sanitize Data
- 
+//Sanitize Data
+
 
 function sanitize($dirty)
 {
@@ -69,7 +69,7 @@ function sanitize($dirty)
 }
 
 
- //Redirect to a given url
+//Redirect to a given url
 
 function redirect($url)
 {
