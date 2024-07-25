@@ -2,7 +2,7 @@
 loadPartial('header');
 ?>
 
-<section>
+<section class="bg-white">
     <div>
         <div><?= $status ?></div>
         <p>

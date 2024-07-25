@@ -24,6 +24,18 @@ li{
     list-style: none;
 }
 
+html{
+    background-color: #03346E;
+}
+
+.bg-white{
+    background-color: white;
+    padding: 20px;
+    padding-bottom: 40px;
+    margin-left: 0px;
+    outline: 10px solid white;
+}
+
 .yellow-btn{
     background-color: gold;
     border: none;
@@ -111,8 +123,8 @@ div, a, p, button, input, textarea{
     width: 100%;
 }
 
-.w-50{
-    width: 50%;
+.w-40{
+    width: 40%;
 }
 
 /* header */
@@ -120,9 +132,8 @@ div, a, p, button, input, textarea{
 header{
     background-color: #03346E;
     color: white;
-    border-radius: 20px;
+    margin-bottom: 50px;
     width: 100%;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
@@ -167,12 +178,22 @@ font-size: 26pt;
 
 }
 
+#reg, #login{
+    background-color: white;
+    padding-bottom: 10%;
+}
+
 /* search */
 
 #search{
     display: flex;
     justify-content: center;
     text-align: center;
+    margin-bottom: 5%;
+}
+
+#search h1{
+    color: white;
 }
 
 #search input{
@@ -204,10 +225,12 @@ font-size: 26pt;
 }
 
 .card{
-    padding: 1%;
     width: 10%;
-    border-radius: 20px;
-    color: black
+    color: black;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    min-height: 500px;
 }
 
 .card-large{
@@ -225,6 +248,14 @@ font-size: 26pt;
 .card-right {
     justify-self: flex-start;
     width: 50%;
+}
+
+.card-desc{
+    min-height: 100px;
+}
+
+.card-bottom{
+    justify-self: flex-end;
 }
 
 /* forms */
@@ -306,7 +337,7 @@ textarea{
 #reg{
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    padding-top: 100px;
 }
 
 /* login */
@@ -336,3 +367,17 @@ textarea{
     max-width: 600px;
     border-radius: 20px;
 }
+
+/* footer */
+
+footer{
+    background-color: #03346E;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    margin-top: 50px;
+}
+
+/*
+* To add media queries and refactor stylings for mobile/tablet optimisation

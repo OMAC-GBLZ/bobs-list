@@ -4,7 +4,7 @@ use Framework\Session;
 
 loadPartial('header');
 ?>
-<section>
+<section class="bg-white">
     <div class="container-vert">
         <h2>Create Listing</h2>
         <form method="POST" action="/listings" enctype="multipart/form-data">
@@ -21,7 +21,7 @@ loadPartial('header');
                 <input type="email" name="email" value="<?= $listing['email'] ??  Session::get('user')['email'] ?>" placeholder="Contact Email" />
                 <label for="image">Add a Picture (.jpg, .jpeg, .png)</label>
                 <input type="file" name="image">
-                <button class="green-btn">Save</button>
+                <button class="blue-btn">Save</button>
                 <div class="yellow-btn">
                     <a href="/">Cancel</a>
                 </div>

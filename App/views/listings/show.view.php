@@ -1,7 +1,7 @@
 <?php
 loadPartial('header');
 ?>
-<section id="single">
+<section id="single" class="bg-white">
 
     <div class="grid-left">
         <a href="/listings">
@@ -58,7 +58,7 @@ loadPartial('header');
             </div>
             <?php if ($listing->phone) : ?>
                 <p>
-                    Or call the seller on: <?= $listing->phone ?>
+                    Or call the seller on: <strong><?= $listing->phone ?></strong>
                 </p>
             <?php endif; ?>
         </div>

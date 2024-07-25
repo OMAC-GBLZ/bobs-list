@@ -3,14 +3,14 @@ loadPartial('header');
 loadPartial('search');
 ?>
 
-<section id="home">
+<section id="home" class="bg-white">
 
     <div class="home-content">
         <h2 class="self-center">Recent Listings</h2>
         <div class="home-listings">
             <?php foreach ($listings as $listing) : ?>
                 <div class="card">
-                    <div>
+                    <div class="card-top">
                         <h3><?= $listing->title ?></h3>
                         <div class="img-small">
                             <?php if ($listing->image_location !== 'NULL') : ?>
@@ -23,10 +23,15 @@ loadPartial('search');
                                 </a>
                             <?php endif; ?>
                         </div>
+                        <div class="card-desc">
+                            <p>
+                                <?= getExcerpt($listing->description) ?>
+                            </p>
+                        </div>
 
-                        <p>
-                            <?= $listing->description ?>
-                        </p>
+                    </div>
+
+                    <div class="card-bottom">
                         <ul>
                             <li><strong>Price:</strong> £<?= $listing->price ?></li>
                             <li> <strong>Location:</strong> <?= $listing->postcode ?></li>
@@ -36,20 +41,20 @@ loadPartial('search');
                                 </li>
                             <?php endif; ?>
                         </ul>
-
+                        <p><?= $listing->created_at ?></p>
                         <a href="/listings/<?= $listing->id ?>">
                             <div class="blue-btn">Details</div>
                         </a>
-
-                        <p><?= $listing->created_at ?></p>
                     </div>
                 </div>
             <?php endforeach; ?>
         </div>
-        <div class="self-center yellow-btn w-50">
-            <a href="/listings">All Listings</a>
-        </div>
+        <div class="self-center w-40">
+            <a href="/listings">
+                <div class="yellow-btn">All Listings</div>
+            </a>
 
+        </div>
     </div>
 </section>
 

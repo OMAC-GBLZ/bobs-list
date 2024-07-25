@@ -5,7 +5,7 @@ loadPartial('header');
 
 
 
-<section id="results">
+<section id="results" class="bg-white">
     <div>
         <div class="page-title">
             <?php if (isset($keywords)) : ?>

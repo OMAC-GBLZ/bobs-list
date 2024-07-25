@@ -76,3 +76,14 @@ function redirect($url)
     header(("Location: {$url}"));
     exit;
 }
+
+//Extract excerpt from string
+
+function getExcerpt($string)
+{
+    if (strlen($string) > 90) {
+        return substr($string, 0, 80) . '...';
+    } else {
+        return $string;
+    }
+}

@@ -2,7 +2,7 @@
 loadPartial('header');
 ?>
 
-<section>
+<section class="bg-white">
     <div class="container-vert">
         <h2>Edit Listing</h2>
         <?php loadPartial('errors', [
