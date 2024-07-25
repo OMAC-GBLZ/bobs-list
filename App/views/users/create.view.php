@@ -16,7 +16,7 @@ loadPartial('header');
                 <input type="email" name="email" value="<?= $user['email'] ?? '' ?>" placeholder="Email Address" />
                 <input type="password" name="password" placeholder="Password" />
                 <input type="password" name="password_confirmation" placeholder="Confirm Password" />
-                <button class="green-btn" type="submit">Register</button>
+                <button class="blue-btn" type="submit">Register</button>
             </div>
         </form>
         <div class="self-center">

@@ -12,7 +12,7 @@ loadPartial('header');
         <?= loadPartial('message') ?>
         <?php if (Framework\Authorisation::isOwner($listing->user_id)) : ?>
             <a href="/listings/edit/<?= $listing->id ?>">
-                <div class="yellow-btn">Edit</div>
+                <div class="blue-btn">Edit</div>
             </a>
             <div>
                 <form method="POST">
@@ -28,7 +28,7 @@ loadPartial('header');
     <div>
         <h2><?= $listing->title ?></h2>
         <div class="img-large">
-            <?php if ($listing->image_location) : ?>
+            <?php if ($listing->image_location !== 'NULL') : ?>
                 <a href="<?= $listing->image_location ?>">
                     <img class="img-large" src="<?= $listing->image_location ?>" alt="<?= $listing->title ?>">
                 </a>
@@ -51,9 +51,11 @@ loadPartial('header');
             <p>
                 Put "<?= $listing->title ?>" as the subject of your email.
             </p>
-            <a href="mailto:<?= $listing->email ?>">
-                Email Seller
-            </a>
+            <div>
+                <a href="mailto:<?= $listing->email ?>">
+                    <div class="yellow-btn">Email Seller</div>
+                </a>
+            </div>
             <?php if ($listing->phone) : ?>
                 <p>
                     Or call the seller on: <?= $listing->phone ?>

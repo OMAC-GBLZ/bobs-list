@@ -248,8 +248,12 @@ class ListingController
 
         $updatedValues = array_intersect_key($_POST, array_flip($allowedFields));
 
+        //update image and delete old one
         if ($storedPath !== 'NULL') {
             $updatedValues['image_location'] = $storedPath;
+            if ($listing->image_location != 'NULL') {
+                unlink(basePath('/public' . $listing->image_location));
+            }
         }
 
         $updatedValues = array_map('sanitize', $updatedValues);

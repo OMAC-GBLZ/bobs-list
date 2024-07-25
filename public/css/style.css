@@ -32,7 +32,12 @@ li{
     text-align: center;
     min-width: 50px;
     cursor: pointer;
+    color: black;
 
+}
+
+.yellow-btn:hover{
+    background-color: #b49900;
 }
 
 .red-btn{
@@ -43,6 +48,11 @@ li{
     text-align: center;
     min-width: 50px;
     cursor: pointer;
+    color: white;
+}
+
+.red-btn:hover{
+    background-color: #681a1a;
 }
 
 .green-btn{
@@ -53,7 +63,27 @@ li{
     text-align: center;
     min-width: 50px;
     cursor: pointer;
+    color: white;
 
+}
+
+.green-btn:hover{
+    background-color: #005a00;
+}
+
+.blue-btn{
+    background-color: #03346E;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 50px;
+    cursor: pointer;
+    color: white;
+
+}
+.blue-btn:hover{
+    background-color: #011936;
 }
 
 button{
@@ -81,6 +111,10 @@ div, a, p, button, input, textarea{
     width: 100%;
 }
 
+.w-50{
+    width: 50%;
+}
+
 /* header */
 
 header{
@@ -101,6 +135,10 @@ header{
     margin-right: 10%;
     gap: 50px;
     grid-area: 1 / 2 / 2 / 3;
+}
+
+.nav a:hover{
+    color: #b49900;
 }
 
 
@@ -166,11 +204,27 @@ font-size: 26pt;
 }
 
 .card{
-    background-color: #03346E;
     padding: 1%;
     width: 10%;
     border-radius: 20px;
-    color: white
+    color: black
+}
+
+.card-large{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+.card-inner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+}
+
+.card-right {
+    justify-self: flex-start;
+    width: 50%;
 }
 
 /* forms */
@@ -273,7 +327,8 @@ textarea{
 }
 
 .img-med{
-    max-width: 400px;
+    min-width: 300px;
+    max-width: 300px;
     border-radius: 10px;
 }
 

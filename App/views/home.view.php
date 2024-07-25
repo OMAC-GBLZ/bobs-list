@@ -13,7 +13,7 @@ loadPartial('search');
                     <div>
                         <h3><?= $listing->title ?></h3>
                         <div class="img-small">
-                            <?php if ($listing->image_location) : ?>
+                            <?php if ($listing->image_location !== 'NULL') : ?>
                                 <a href="<?= $listing->image_location ?>">
                                     <img class="img-small" src="<?= $listing->image_location ?>" alt="<?= $listing->title ?>">
                                 </a>
@@ -36,14 +36,17 @@ loadPartial('search');
                                 </li>
                             <?php endif; ?>
                         </ul>
-                        <div class="yellow-btn">
-                            <a href="/listings/<?= $listing->id ?>">Details</a>
-                        </div>
+
+                        <a href="/listings/<?= $listing->id ?>">
+                            <div class="blue-btn">Details</div>
+                        </a>
+
+                        <p><?= $listing->created_at ?></p>
                     </div>
                 </div>
             <?php endforeach; ?>
         </div>
-        <div class="self-center yellow-btn">
+        <div class="self-center yellow-btn w-50">
             <a href="/listings">All Listings</a>
         </div>
 

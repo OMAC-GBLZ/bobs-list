@@ -25,7 +25,9 @@ use Framework\Session;
 
         <div class="nav">
             <?php if (Session::has('user')) : ?>
-                <button class="yellow-btn"><a href="/listings/create">Create a listing</a></button>
+                <a href="/listings/create">
+                    <div class="yellow-btn">Create a listing</div>
+                </a>
                 <div>
                     <p>Welcome, <?= Session::get('user')['name']  ?>!</p>
                 </div>

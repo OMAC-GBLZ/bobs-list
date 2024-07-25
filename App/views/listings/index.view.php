@@ -17,38 +17,46 @@ loadPartial('header');
         <?= loadPartial('message') ?>
         <div class="results">
             <?php foreach ($listings as $listing) : ?>
-                <div class="card">
-                    <div>
-                        <h2><?= $listing->title ?></h2>
-                        <div class="img-med">
-                            <?php if ($listing->image_location) : ?>
-                                <a href="<?= $listing->image_location ?>">
-                                    <img class="img-med" src="<?= $listing->image_location ?>" alt="<?= $listing->title ?>">
-                                </a>
-                            <?php else : ?>
-                                <a href="/images/nophoto.jpg">
-                                    <img class="img-med" src="/images/nophoto.jpg" alt="no photo provided">
-                                </a>
-                            <?php endif; ?>
+                <div class="card-large">
+                    <div class="card-inner">
+                        <div class="card-left">
+                            <h2><?= $listing->title ?></h2>
+                            <div class="img-med">
+                                <?php if ($listing->image_location !== 'NULL') : ?>
+                                    <a href="<?= $listing->image_location ?>">
+                                        <img class="img-med" src="<?= $listing->image_location ?>" alt="<?= $listing->title ?>">
+                                    </a>
+                                <?php else : ?>
+                                    <a href="/images/nophoto.jpg">
+                                        <img class="img-med" src="/images/nophoto.jpg" alt="no photo provided">
+                                    </a>
+                                <?php endif; ?>
+                            </div>
                         </div>
-                        <p>
-                            <?= $listing->description ?>
-                        </p>
-                        <ul>
-                            <li><strong>Price:</strong> £<?= $listing->price ?></li>
-                            <li>
-                                <strong>Location:</strong> <?= $listing->postcode ?>
-                            </li>
-                            <?php if (!empty($listing->tags)) : ?>
+                        <div class="card-right">
+                            <ul>
+                                <li><strong>Price:</strong> £<?= $listing->price ?></li>
                                 <li>
-                                    <strong>Tags:</strong> <span><?= $listing->tags ?></span>,
+                                    <strong>Location:</strong> <?= $listing->postcode ?>
                                 </li>
-                            <?php endif; ?>
-                        </ul>
-                        <a href="/listings/<?= $listing->id ?>">
-                            <div class="yellow-btn">Details</div>
-                        </a>
+                                <?php if (!empty($listing->tags)) : ?>
+                                    <li>
+                                        <strong>Tags:</strong> <span><?= $listing->tags ?></span>,
+                                    </li>
+                                <?php endif; ?>
+                            </ul>
+                        </div>
                     </div>
+
+                    <p>
+                        <?= $listing->description ?>
+                    </p>
+
+
+                    <a href="/listings/<?= $listing->id ?>">
+                        <div class="yellow-btn">Details</div>
+                    </a>
+
                 </div>
             <?php endforeach; ?>
 </section>

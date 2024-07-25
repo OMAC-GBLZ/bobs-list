@@ -1,4 +1,7 @@
 <?php
+
+use Framework\Session;
+
 loadPartial('header');
 ?>
 <section>
@@ -15,7 +18,7 @@ loadPartial('header');
                 <input type="text" name="tags" value="<?= $listing['tags'] ?? '' ?>" placeholder="Tags" />
                 <input type="text" name="postcode" value="<?= $listing['postcode'] ?? '' ?>" placeholder="Postcode" />
                 <input type="text" name="phone" value="<?= $listing['phone'] ?? '' ?>" placeholder="Contact Phone Number" />
-                <input type="email" name="email" value="<?= $listing['email'] ?? '' ?>" placeholder="Contact Email" />
+                <input type="email" name="email" value="<?= $listing['email'] ??  Session::get('user')['email'] ?>" placeholder="Contact Email" />
                 <label for="image">Add a Picture (.jpg, .jpeg, .png)</label>
                 <input type="file" name="image">
                 <button class="green-btn">Save</button>
