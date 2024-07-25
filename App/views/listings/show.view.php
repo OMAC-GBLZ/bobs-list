@@ -56,6 +56,7 @@ loadPartial('header');
                     <div class="yellow-btn">Email Seller</div>
                 </a>
             </div>
+            <br>
             <?php if ($listing->phone) : ?>
                 <p>
                     Or call the seller on: <strong><?= $listing->phone ?></strong>
