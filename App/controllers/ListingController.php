@@ -156,6 +156,7 @@ class ListingController
             return;
         }
 
+
         //authhorisation
         if (!Authorisation::isOwner($listing->user_id)) {
             Session::setFlashMessage('error_message', 'You are not authorised to delete this listing');
@@ -163,6 +164,10 @@ class ListingController
         }
         $this->db->query('DELETE FROM listings WHERE id = :id', $params);
 
+        //delete image from server
+        if ($listing->image_location != 'NULL') {
+            unlink(basePath('/public' . $listing->image_location));
+        }
         //set flash message
         Session::setFlashMessage('success', 'Listing deleted successfully');
 
